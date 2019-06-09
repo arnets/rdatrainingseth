@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Map</title>
+   <link rel="stylesheet" href="leaflet.css"/>
+   
+</head>
+<body onload="javascript:defaultMap();">
+   <div class="content">
+     <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+   <script language="javascript">
+      var mymap;
+      function defaultMap() {
+         mymap = new L.Map('map');
+         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         }).addTo(mymap);
+         mymap.attributionControl.setPrefix('');
+         mymap.setView(new L.LatLng(36.925, -4.2056), 3);
+         L.marker([36.925,-4.2056])
+         .bindPopup("Default Location")
+         .addTo(mymap);
+      }
+      
+   </script>
+      <div id="map" style="height: 600px;width: 600px"></div>
+   </div>
+</body>
+</html>
